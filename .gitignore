@@ -1,0 +1,11 @@
+stuff/
+
+# JS
+node_modules/
+
+# SvelteKit
+.svelte-kit/
+build/
+
+# Editors
+.vscode/
