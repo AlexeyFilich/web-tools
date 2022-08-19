@@ -21,6 +21,7 @@
 <style>
     .schedule-container {
         padding-left: 10px;
+        padding-right: 10px;
         display: flex;
         flex-direction: row;
         overflow-x: auto;
