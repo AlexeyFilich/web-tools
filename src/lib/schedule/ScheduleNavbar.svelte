@@ -13,6 +13,7 @@
 
     let width: number;
     $: weekText = width < 515 ? 'Нед.' : 'Неделя';
+    $: weekFontSize = width < 515 ? '28px' : '30px';
 </script>
 
 <svelte:window bind:innerWidth="{width}" />
@@ -21,7 +22,7 @@
     {#each Array(WEEK_COUNT) as _, index}
         <div class="week-select-button">
             <input id="week-{index}" bind:group="{selectedWeek}" value="{index}" type="radio">
-            <label for="week-{index}">{weekText} {index + 1} {index === currentWeek ? '*': ''}</label>
+            <label for="week-{index}" style:font-size="{weekFontSize}">{weekText} {index + 1} {index === currentWeek ? '*': ''}</label>
         </div>
     {/each}
 </div>
@@ -45,7 +46,6 @@
     .week-select-button label {
         cursor: pointer;
         user-select: none;
-        font-size: 30px;
         padding: 10px;
         line-height: 70px;
         color: var(--item-not-selected);
