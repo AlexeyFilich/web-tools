@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Bahnschrift';
+    font-weight: 100;
+    font-stretch: semi-condensed;
+    src: url('fonts/Bahnschrift.ttf');
+}
+
+:root {
+    --background: #E7EBF0;
+    --separator: #E0E0E0;
+    --shadow: #939699;
+    --item-selected: #1976D2;
+    --item-not-selected: #666666;
+    --skeleton-dark: #E3E3E3;
+    --skeleton-light: #F4F4F4;
+    --app-bar: #1976D2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bahnschrift';
+}
+
+body {
+    background-color: var(--background);
+}

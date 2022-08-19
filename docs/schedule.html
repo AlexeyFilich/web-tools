@@ -6,12 +6,12 @@
         <link rel='icon' href='/web-tools/favicon.png' />
         <meta name='viewport' content='width=device-width' />
         <meta http-equiv="content-security-policy" content=""><title>Web Tools</title>
-	<link rel="stylesheet" href="/web-tools/_app/immutable/assets/schedule-2b950ada.css">
-	<link rel="modulepreload" href="/web-tools/_app/immutable/start-ec4b9d03.js">
-	<link rel="modulepreload" href="/web-tools/_app/immutable/chunks/index-4af589cf.js">
+	<link rel="stylesheet" href="/web-tools/_app/immutable/assets/index-60975383.css">
+	<link rel="modulepreload" href="/web-tools/_app/immutable/start-c0df54fd.js">
+	<link rel="modulepreload" href="/web-tools/_app/immutable/chunks/index-a1063ae2.js">
 	<link rel="modulepreload" href="/web-tools/_app/immutable/chunks/paths-b9644fda.js">
-	<link rel="modulepreload" href="/web-tools/_app/immutable/pages/__layout.svelte-39f2edce.js">
-	<link rel="modulepreload" href="/web-tools/_app/immutable/pages/schedule.svelte-83642fe9.js">
+	<link rel="modulepreload" href="/web-tools/_app/immutable/pages/__layout.svelte-c6526d81.js">
+	<link rel="modulepreload" href="/web-tools/_app/immutable/pages/schedule/index.svelte-dc561a06.js">
     </head>
 
     <body>
@@ -20,20 +20,35 @@
 
 
 
-<h1>Schedule</h1>
-
-
-    <h1>Loading</h1>
+<div class="header svelte-sb4kto"><span class="header-title svelte-sb4kto">БГУИР | Расписание группы 050702</span>
+</div>
 
 
 
-		<script type="module" data-sveltekit-hydrate="1tsg0do">
-		import { set_public_env, start } from "/web-tools/_app/immutable/start-ec4b9d03.js";
+<div class="navbar svelte-7v7yna"><div class="week-select-button svelte-7v7yna"><input id="week-0" value="0" type="radio" class="svelte-7v7yna">
+            <label for="week-0" class="svelte-7v7yna">Неделя 1 </label>
+        </div><div class="week-select-button svelte-7v7yna"><input id="week-1" value="1" type="radio" class="svelte-7v7yna">
+            <label for="week-1" class="svelte-7v7yna">Неделя 2 </label>
+        </div><div class="week-select-button svelte-7v7yna"><input id="week-2" value="2" type="radio" class="svelte-7v7yna" checked>
+            <label for="week-2" class="svelte-7v7yna">Неделя 3 *</label>
+        </div><div class="week-select-button svelte-7v7yna"><input id="week-3" value="3" type="radio" class="svelte-7v7yna">
+            <label for="week-3" class="svelte-7v7yna">Неделя 4 </label>
+        </div>
+</div>
+
+<div class="schedule-container svelte-jaaehb">
+        <div class="sceleton svelte-14suwnj"></div><div class="sceleton svelte-14suwnj"></div><div class="sceleton svelte-14suwnj"></div><div class="sceleton svelte-14suwnj"></div><div class="sceleton svelte-14suwnj"></div><div class="sceleton svelte-14suwnj"></div>
+    
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="pp6ymi">
+		import { set_public_env, start } from "/web-tools/_app/immutable/start-c0df54fd.js";
 
 		set_public_env({});
 
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1tsg0do"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="pp6ymi"]').parentNode,
 			paths: {"base":"/web-tools","assets":"/web-tools"},
 			session: {},
 			route: true,

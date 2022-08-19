@@ -1,6 +1,8 @@
 import { ApiBindings } from '$lib/schedule/ApiBindings';
 import { WEEK_COUNT, type ClassData, type Professor, type Schedule, type WeekSchedule } from '$lib/schedule/Schedule';
 
+export const STUDENT_GROUP = '050702';
+
 export async function loadSchedule(): Promise<Schedule> {
     let schedule: Schedule = Array.from({ length: WEEK_COUNT }, () => {
         let weekSchedule: { [key: string]: any } = {};
@@ -8,7 +10,7 @@ export async function loadSchedule(): Promise<Schedule> {
         return weekSchedule as WeekSchedule;
     });
 
-    const response = await fetch('https://iis.bsuir.by/api/v1/schedule?studentGroup=050702');
+    const response = await fetch(`https://iis.bsuir.by/api/v1/schedule?studentGroup=${STUDENT_GROUP}`);
     const data = (await response.json()) as ApiBindings.Schedule;
 
     for (const [dayProperty, classes] of Object.entries(data.schedules)) {
@@ -26,10 +28,11 @@ export async function loadSchedule(): Promise<Schedule> {
 
             const scheduleClassData: ClassData = {
                 classType: classData.lessonTypeAbbrev,
-                className: `${classData.subject} - ${classData.subjectFullName}`,
+                className: classData.subject,
+                fullClassName: classData.subjectFullName,
                 startTime: classData.startLessonTime,
                 endTime: classData.endLessonTime,
-                auditory: classData.auditories[0] || 'No auditory',
+                auditory: classData.auditories[0] || '???',
                 professor
             }
 
