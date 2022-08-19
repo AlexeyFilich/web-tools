@@ -1,6 +1,6 @@
 <script lang="ts">
     import ScheduleDaySkeleton from '$lib/schedule/ScheduleDaySkeleton.svelte';
-    import { WEEK_LENGTH,type Schedule } from './Schedule';
+    import type { Schedule } from './Schedule';
     import ScheduleDay from './ScheduleDay.svelte';
 
     export let selectedWeek: number;
@@ -10,9 +10,7 @@
 
 <div class="schedule-container">
     {#await schedule}
-        {#each Array(WEEK_LENGTH) as _}
-            <ScheduleDaySkeleton />
-        {/each}
+        <ScheduleDaySkeleton />
     {:then schedule}
         {#each Object.entries(schedule[selectedWeek]) as [day, classes], index}
             <ScheduleDay dayOfWeek="{day}" dayNumber="{index}" isOnCurrentWeek="{isOnCurrentWeek}" classes="{classes}"></ScheduleDay>

@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>Web Tools</title>
+    <title>Schedule</title>
 </svelte:head>
 
 <ScheduleHeader />

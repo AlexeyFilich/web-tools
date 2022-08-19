@@ -11,7 +11,7 @@
 
     export let selectedWeek: number = currentWeek;
 
-    let width: number;
+    let width: number = 0;
     $: weekText = width < 515 ? 'Нед.' : 'Неделя';
     $: weekFontSize = width < 515 ? '28px' : '30px';
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
 </script>
 
-<div class="sceleton"></div>
+<div class="skeleton"></div>
 
 <style>
-    .sceleton {
+    .skeleton {
         width: 212px;
         height: 444px;
         margin: 5px;
