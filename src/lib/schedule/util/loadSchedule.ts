@@ -32,7 +32,7 @@ export async function loadSchedule(): Promise<Schedule> {
                 fullClassName: classData.subjectFullName,
                 startTime: classData.startLessonTime,
                 endTime: classData.endLessonTime,
-                auditory: classData.auditories[0] || '???',
+                auditory: classData.auditories[0] || 'Нет ауд.',
                 professor
             }
 
