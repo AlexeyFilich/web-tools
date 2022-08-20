@@ -1,13 +1,8 @@
 <script lang="ts">
     import { WEEK_COUNT } from '$lib/schedule/Schedule';
+    import moment from 'moment';
 
-    export let currentWeek = (() => {
-        let currentDate = new Date();
-        let startDate = new Date(currentDate.getFullYear(), 0, 1);
-        let week = Math.ceil(((currentDate.getTime() - startDate.getTime()) / (24 * 60 * 60 * 1000)) / 7);
-
-        return (week + 1) % WEEK_COUNT;
-    })();
+    export let currentWeek = moment().week() % 4;
 
     export let selectedWeek: number = currentWeek;
 
