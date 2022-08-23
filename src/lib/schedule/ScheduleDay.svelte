@@ -6,23 +6,21 @@
     export let dayNumber: number;
     export let isOnCurrentWeek: boolean;
     export let classes: ClassData[];
-    classes = classes.sort((a, b) => (a.startTime > b.startTime) ? 1 : -1);
+    classes = classes.sort((a, b) => (a.startTime > b.startTime ? 1 : -1));
 
-    $: isToday = isOnCurrentWeek && (new Date().getDay() - 1 === dayNumber);
+    $: isToday = isOnCurrentWeek && new Date().getDay() - 1 === dayNumber;
 
     $: currentClass = (() => {
-        if (!isToday)
-            return -1;
+        if (!isToday) return -1;
 
         let now = new Date().toLocaleTimeString('ru-RU', {
             hour: '2-digit',
-            minute: '2-digit'
+            minute: '2-digit',
         });
 
         let lastIndex = 0;
         for (let i = 0; i < classes.length; i++)
-            if (now > classes[i].endTime)
-                lastIndex = i + 1;
+            if (now > classes[i].endTime) lastIndex = i + 1;
 
         return lastIndex;
     })();
@@ -32,7 +30,7 @@
             const self = document.getElementById(`day-container-${dayNumber}`);
             self?.scrollIntoView({
                 behavior: 'smooth',
-                inline: 'center'
+                inline: 'center',
             });
         }
     }, 1000);
@@ -40,14 +38,20 @@
 
 <div class="day-container" id="day-container-{dayNumber}">
     <div class="header-container">
-        <span class="day-text {isToday ? 'day-text-today' : ''}">{dayOfWeek}</span>
+        <span class="day-text {isToday ? 'day-text-today' : ''}"
+            >{dayOfWeek}</span
+        >
     </div>
     <!-- width = ScheduleDay/.class-container[width] + 2 * ScheduleDay/.class-container[padding] -->
-    <div style="width: 212px"></div>
+    <div style="width: 212px" />
     <div class="schedule-container">
         {#if classes.length > 0}
             {#each classes as classData, index}
-                <ScheduleClass index="{index}" isCurrent="{index === currentClass}" classData="{classData}"></ScheduleClass>
+                <ScheduleClass
+                    {index}
+                    isCurrent={index === currentClass}
+                    {classData}
+                />
             {/each}
         {:else}
             <span class="day-text">Нет занятий</span>

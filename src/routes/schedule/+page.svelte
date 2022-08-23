@@ -21,7 +21,7 @@
 
 <ScheduleNavbar bind:currentWeek bind:selectedWeek />
 
-<ScheduleWeek selectedWeek="{selectedWeek}" isOnCurrentWeek="{isOnCurrentWeek}" schedule="{schedule}" />
+<ScheduleWeek {selectedWeek} {isOnCurrentWeek} {schedule} />
 
 <style>
 </style>

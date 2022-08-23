@@ -13,7 +13,12 @@
         <ScheduleDaySkeleton />
     {:then schedule}
         {#each Object.entries(schedule[selectedWeek]) as [day, classes], index}
-            <ScheduleDay dayOfWeek="{day}" dayNumber="{index}" isOnCurrentWeek="{isOnCurrentWeek}" classes="{classes}"></ScheduleDay>
+            <ScheduleDay
+                dayOfWeek={day}
+                dayNumber={index}
+                {isOnCurrentWeek}
+                {classes}
+            />
         {/each}
     {/await}
 </div>
@@ -28,7 +33,7 @@
     }
 
     ::-webkit-scrollbar {
-       height: 10px;
+        height: 10px;
     }
 
     ::-webkit-scrollbar-thumb {

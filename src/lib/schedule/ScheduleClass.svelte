@@ -4,8 +4,8 @@
     enum HeaderColor {
         'ЛК' = '#87E3F5',
         'ПЗ' = '#0B68E0',
-        'ЛР' = '#9000DE'
-    };
+        'ЛР' = '#9000DE',
+    }
 
     export let index: number;
     export let isCurrent: boolean;
@@ -16,22 +16,29 @@
 
 <div class="class-container">
     <div class="row-container">
-        <span class="sub-text">{classData.startTime} - {classData.endTime}</span>
+        <span class="sub-text">{classData.startTime} - {classData.endTime}</span
+        >
         <span class="sub-text auditory-text">{classData.auditory}</span>
     </div>
     <div class="row-container">
         <span class="primary-text circle" style:color={headerColor}>•</span>
-        <span class="primary-text {isCurrent ? 'primary-text-current' : ''}">{classData.className} ({classData.classType})</span>
+        <span class="primary-text {isCurrent ? 'primary-text-current' : ''}"
+            >{classData.className} ({classData.classType})</span
+        >
     </div>
     <div class="row-container">
         {#if classData.professor}
-            <span class="sub-text">{classData.professor.lastName} {classData.professor.firstName[0]}. {classData.professor.patronymic[0]}.</span>
+            <span class="sub-text"
+                >{classData.professor.lastName}
+                {classData.professor.firstName[0]}. {classData.professor
+                    .patronymic[0]}.</span
+            >
         {:else}
             <span class="sub-text">Нет преподавателя</span>
         {/if}
     </div>
     {#if index + 1 != MAX_CLASSES_PER_DAY}
-        <div class="border"></div>
+        <div class="border" />
     {/if}
 </div>
 
@@ -70,6 +77,6 @@
     }
 
     .circle {
-        font-family: 'Times New Roman';
+        font-family: "Times New Roman";
     }
 </style>

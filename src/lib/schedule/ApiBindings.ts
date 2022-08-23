@@ -29,7 +29,7 @@ export namespace ApiBindings {
         numberOfStudents: number,
         name: string,
         educationDegree: number
-    }
+    };
 
     export type StudentGroupDto = {
         id: number,

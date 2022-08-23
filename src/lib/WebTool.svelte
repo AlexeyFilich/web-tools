@@ -6,6 +6,6 @@
 
 <style>
     h1 {
-        background-color: brown
+        background-color: brown;
     }
 </style>

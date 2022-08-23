@@ -11,13 +11,22 @@
     $: weekFontSize = width < 515 ? '28px' : '30px';
 </script>
 
-<svelte:window bind:innerWidth="{width}" />
+<svelte:window bind:innerWidth={width} />
 
 <div class="navbar">
     {#each Array(WEEK_COUNT) as _, index}
         <div class="week-select-button">
-            <input id="week-{index}" bind:group="{selectedWeek}" value="{index}" type="radio">
-            <label for="week-{index}" style:font-size="{weekFontSize}">{weekText} {index + 1} {index === currentWeek ? '*': ''}</label>
+            <input
+                id="week-{index}"
+                bind:group={selectedWeek}
+                value={index}
+                type="radio"
+            />
+            <label for="week-{index}" style:font-size={weekFontSize}
+                >{weekText}
+                {index + 1}
+                {index === currentWeek ? "*" : ""}</label
+            >
         </div>
     {/each}
 </div>
