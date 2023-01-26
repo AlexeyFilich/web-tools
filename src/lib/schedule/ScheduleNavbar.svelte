@@ -2,7 +2,8 @@
     import { WEEK_COUNT } from '$lib/schedule/Schedule';
     import moment from 'moment';
 
-    export let currentWeek = moment().week() % 4;
+    // I don't know what week they use when starting an new semester
+    export let currentWeek = (moment().week() + 1) % 4;
 
     export let selectedWeek: number = currentWeek;
 
