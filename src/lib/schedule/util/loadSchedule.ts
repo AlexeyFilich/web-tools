@@ -1,7 +1,7 @@
 import { ApiBindings } from '$lib/schedule/ApiBindings';
 import { WEEK_COUNT, type ClassData, type Professor, type Schedule, type WeekSchedule } from '$lib/schedule/Schedule';
 
-export const STUDENT_GROUP = '050702';
+export const STUDENT_GROUP = '050701';
 
 export async function loadSchedule(): Promise<Schedule> {
     let schedule: Schedule = Array.from({ length: WEEK_COUNT }, () => {
